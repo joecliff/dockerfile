@@ -15,5 +15,6 @@ docker pull joecliff/ubuntu
 Build by yourself
 ------
 ```
-docker build --rm -t joecliff/ubuntu github.com/joecliff/dockerfile/ubuntu
+cd /path/to/dockerfile/ubuntu
+docker build --rm -t joecliff/ubuntu .
 ```
