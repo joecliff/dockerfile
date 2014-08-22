@@ -1,5 +1,5 @@
 #
-# Ubuntu Dockerfile
+# Ubuntu Dockerfile, use source image in China
 #
 # https://github.com/joecliff/docker-ubuntu
 #
@@ -7,11 +7,13 @@
 # Pull base image.
 FROM ubuntu:14.04
 
-# Install.
+# Change source list
+RUN mv /etc/apt/sources.list /etc/apt/sources.list.bk
+ADD ./sources.list /etc/apt/
+RUN apt-get update && apt-get -y upgrade 
+
+# Base lib
 RUN \
-  sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
-  apt-get update && \
-  apt-get -y upgrade && \
   apt-get install -y g++ make unzip wget vim && \
   apt-get install -y python git
 
