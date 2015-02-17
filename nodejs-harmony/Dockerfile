@@ -4,9 +4,9 @@ MAINTAINER Frank Wu wj320@qq.com
 # install nodejs
 RUN \
   cd /tmp && \
-  wget https://github.com/joyent/node/archive/v0.11.13.tar.gz && \
-  tar xvzf v0.11.13.tar.gz && \
-  rm -f v0.11.13.tar.gz && \
+  wget https://github.com/joyent/node/archive/v0.12.0.tar.gz && \
+  tar xvzf v0.12.0.tar.gz && \
+  rm -f v0.12.0.tar.gz && \
   cd node-* && \
   ./configure && \
   CXX="g++ -Wno-unused-local-typedefs" make && \
