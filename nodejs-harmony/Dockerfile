@@ -1,6 +1,8 @@
 FROM joecliff/ubuntu
 MAINTAINER Frank Wu wj320@qq.com
 
+RUN apt-get update
+
 # install nodejs
 RUN \
   cd /tmp && \
